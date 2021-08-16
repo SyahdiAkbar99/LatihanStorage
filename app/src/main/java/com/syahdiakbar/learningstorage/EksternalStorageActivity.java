@@ -29,6 +29,13 @@ public class EksternalStorageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eksternal_storage);
+        txtIsiFile = findViewById(R.id.txt_isi_ext);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null){
+            String newTitle = extras.getString(keyExternal);
+            setTitle(newTitle);
+        }
     }
 
     private boolean checkPermissionStorage(){
